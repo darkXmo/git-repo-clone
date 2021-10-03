@@ -8,11 +8,5 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "rules": {},
-  "globals": {
-    "defineProps": "readonly",
-    "defineEmits": "readonly",
-    "defineExpose": "readonly",
-    "withDefaults": "readonly"
-  }
+  "rules": {}
 }
