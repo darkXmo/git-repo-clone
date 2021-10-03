@@ -1,6 +1,0 @@
-build/*
-dist/*
-**/*.js
-!src/**/*.js
-**/*.ts
-!src/**/*.ts

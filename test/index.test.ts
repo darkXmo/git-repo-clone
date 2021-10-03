@@ -1,7 +1,7 @@
 import { exec } from "child_process";
 import fs from "fs-extra";
 import path from "path";
-import clone from "../src/index.js";
+import clone from "../src/index";
 
 jest.setTimeout(10000);
 

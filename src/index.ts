@@ -1,12 +1,6 @@
-import exec from "./exec.js";
+import exec from "./exec";
 
-/**
- * clone
- * @param {string} gitHref git地址
- * @param {string | undefined} branch 分支，建议填上
- * @param {string | undefined} dir 下载到本地的地址，默认为git仓库名
- */
-async function clone(gitHref, branch, dir) {
+export async function clone(gitHref: string, branch?: string, dir?: string) {
   if (!branch && !dir) {
     await exec("git", ["clone", gitHref]);
   } else if (!branch) {

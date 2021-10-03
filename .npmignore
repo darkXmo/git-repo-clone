@@ -8,3 +8,4 @@ test
 .prettierrc*
 commitlint*
 jest*
+/src

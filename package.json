@@ -2,44 +2,41 @@
   "name": "git-repo-clone",
   "version": "0.1.0",
   "description": "git clone",
-  "main": "src/index.js",
+  "main": "dist/src/index.js",
   "repository": "git@github.com:darkXmo/git-repo-clone.git",
   "author": "Xmo <18851989097@163.com>",
   "license": "MIT",
-  "module": "module",
   "devDependencies": {
     "@babel/preset-env": "^7.15.6",
-    "@commitlint/cli": "^13.1.0",
-    "@commitlint/config-conventional": "^13.1.0",
+    "@babel/preset-typescript": "^7.15.0",
+    "@types/jest": "^27.0.2",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
     "fs-extra": "^10.0.0",
     "husky": "^7.0.0",
     "jest": "^27.2.4",
     "lint-staged": "^11.1.2",
-    "prettier": "2.4.1"
+    "prettier": "2.4.1",
+    "typescript": "^4.4.3",
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0"
   },
   "lint-staged": {
     "src/**/*.vue": [
-      "eslint --fix",
       "prettier --write --ignore-unknown"
     ],
     "src/**/*.js": [
-      "eslint --fix",
       "prettier --write --ignore-unknown"
     ],
     "src/**/*.ts": [
-      "eslint --fix",
       "prettier --write --ignore-unknown"
     ],
     "*.{js,ts,css,md}": "prettier --write --ignore-unknown"
   },
   "scripts": {
-    "lint:eslint": "eslint --cache --max-warnings 0  \"{src}/**/*.{vue,js,ts,jsx,tsx}\" --fix",
     "commit": "git add . && cz",
     "prepare": "husky install",
-    "test": "jest --detectOpenHandles && git add ."
+    "build": "yarn tsc",
+    "test": "yarn tsc && jest"
   },
   "config": {
     "commitizen": {
