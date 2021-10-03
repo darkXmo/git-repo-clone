@@ -39,7 +39,7 @@
     "lint:eslint": "eslint --cache --max-warnings 0  \"{src}/**/*.{vue,js,ts,jsx,tsx}\" --fix",
     "commit": "git add . && cz",
     "prepare": "husky install",
-    "test": "jest --detectOpenHandles"
+    "test": "jest --detectOpenHandles && git add ."
   },
   "config": {
     "commitizen": {
