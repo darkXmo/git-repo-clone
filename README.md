@@ -1,4 +1,4 @@
-# git-repo-clone
+# git-repo-clone ![npm license](https://img.shields.io/npm/l/git-repo-clone.svg?sanitize=true) ![npm version](https://img.shields.io/npm/v/git-repo-clone.svg?sanitize=true)
 
 git clone 仓库，只实现 clone 用于解决 download-git-repo 中出现交互，则命令行无法直接卡死的问题。
 
@@ -28,6 +28,22 @@ npm install git-repo-clone
 
 - `dir`: 本地位置，即将仓库放在本地哪个目录下，默认为 Git 仓库名。
 
+### Examples
+
+```javascript
+import { clone } from "git-repo-clone";
+
+clone("https://github.com/darkXmo/xmo-cli.git");
+
+clone("https://github.com/darkXmo/xmo-cli.git", "primary");
+
+clone("https://github.com/darkXmo/xmo-cli.git", undefined, "localDir");
+
+clone("https://github.com/darkXmo/xmo-cli.git", "primary", "localDir");
+```
+
+> 如果需要使用 `dir` 参数又不想指定 `branch` ，就用 `undefined` 补全空位即可。
+
 ## 为什么不用 download-git-repo
 
 download-git-repo 遇到
@@ -38,3 +54,5 @@ RSA key fingerprint is SHA256:xxxxxxxxxxxxxxxxxx.
 ```
 
 无法启动交互，会卡死。
+
+另外，`git-repo-clone` 使用 `typescript` 开发，类型检查更加到位。

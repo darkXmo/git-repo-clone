@@ -1,8 +1,8 @@
 {
   "name": "git-repo-clone",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "git clone",
-  "main": "dist/src/index.js",
+  "main": "dist/index.js",
   "repository": "git@github.com:darkXmo/git-repo-clone.git",
   "author": "Xmo <18851989097@163.com>",
   "license": "MIT",

@@ -1,9 +1,12 @@
 {
+  "include": ["src/**/*", "test/**/*"],
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
     "outDir": "dist",
     "sourceMap": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "declaration": true,
+    "allowJs": true,
   }
 }
