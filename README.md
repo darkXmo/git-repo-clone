@@ -17,9 +17,10 @@ npm install git-repo-clone
 ```javascript
   function clone(
     gitHref: string,
-    branch: string | undefined,
-    dir: string | undefined
-  ): Promise<void>;
+    branch?: string | undefined,
+    dir?: string | undefined,
+    empty?: boolean
+  ): Promise<string>;
 ```
 
 - `gitHref`: git 地址，例如 `https://github.com/darkXmo/git-repo-clone.git` 或 `https://gitee.com/dXmo/xmo-cli.git` ;
@@ -28,6 +29,10 @@ npm install git-repo-clone
 
 - `dir`: 本地位置，即将仓库放在本地哪个目录下，默认为 Git 仓库名。
 
+- `empty`: clone 之后是否清空 `.git` 。
+
+- 返回值：clone 下载的仓库的绝对地址，例如 `/home/xmo/code/git-repo-clone/testDirBranch` ;
+
 ### Examples
 
 ```javascript
@@ -35,11 +40,33 @@ import { clone } from "git-repo-clone";
 
 clone("https://github.com/darkXmo/xmo-cli.git");
 
-clone("https://github.com/darkXmo/xmo-cli.git", "primary");
+await clone("https://github.com/darkXmo/xmo-cli.git", "primary");
 
-clone("https://github.com/darkXmo/xmo-cli.git", undefined, "localDir");
+const dir = await clone(
+  "https://github.com/darkXmo/xmo-cli.git",
+  undefined,
+  "localDir"
+);
 
-clone("https://github.com/darkXmo/xmo-cli.git", "primary", "localDir");
+const dir: string = await clone(
+  "https://github.com/darkXmo/xmo-cli.git",
+  "primary",
+  "localDir"
+);
+
+const dir: string = await clone(
+  "https://github.com/darkXmo/xmo-cli.git",
+  "primary",
+  "localDir",
+  true
+);
+
+const dir: string = await clone(
+  "https://github.com/darkXmo/xmo-cli.git",
+  undefined,
+  undefined,
+  true
+);
 ```
 
 > 如果需要使用 `dir` 参数又不想指定 `branch` ，就用 `undefined` 补全空位即可。
